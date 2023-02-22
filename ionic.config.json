@@ -1,7 +1,10 @@
 {
   "name": "ORight HRMS Cordova",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {
+      "enabled": false
+    },
+    "cordova": {}
   },
   "type": "angular"
 }

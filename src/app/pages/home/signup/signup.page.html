@@ -1,0 +1,181 @@
+<div class="container" id="offsetarea">
+
+
+</div>
+
+<div class="container" id="contentarea">
+ 
+  <ion-content  [fullscreen]="true">
+    <div class="example-content">
+
+
+      <ion-card class="ion-text-center">
+          
+        <ion-card-header [translucent]="true">
+           <ion-card-title size="large" >Sign Up</ion-card-title>
+        </ion-card-header>
+        <ion-card-content class="ion-text-center">
+        <swiper [slidesPerView]="1" (swiper)="setSwiperInstance($event)"
+         
+         
+         [initialSlide]="0"  
+         [allowTouchMove]="false"
+        
+         >
+
+          <!--          Form Part 1 GET OPT                    -->
+          <ng-template swiperSlide>
+          <form [formGroup]="otpForm">
+          <ion-item fill="clear">
+            <ion-label position="floating" >Enter Employee ID</ion-label>
+            <ion-input type="text" formControlName="empID" ></ion-input>
+
+          <!--  <ion-note slot="error">Invalid email</ion-note>  -->
+
+          </ion-item>
+          
+        </form>
+      
+
+            <ion-note slot="helper" id="newEmpIDhelper" (click)="presentAlert('Contact Administrator for Employee ID'
+            ,'')">
+              Don't Have Employee ID ?</ion-note>
+
+              <ion-button shape="round" size="full" (click)="getOTP()">Get OTP
+
+              </ion-button>
+              
+            </ng-template>
+
+
+          <!--          Form Part 1 GET OPT                    -->
+
+          <!--          Form Part 2 SUBMIT OPT             -->
+
+            <ng-template swiperSlide>
+              <form [formGroup]="submitOTPForm" >
+              <ion-item fill="clear">
+                <ion-label position="floating" >Submit OTP</ion-label>
+                <ion-input type="number" formControlName="otpInput" ></ion-input>
+    
+              <!--  <ion-note slot="error">Invalid email</ion-note>  -->
+    
+              </ion-item>
+              
+            </form>
+          
+    
+                <ion-note slot="helper" id="newEmpIDhelper" (click)="getOTP()">
+                Resend OTP ?</ion-note>
+    
+                  <ion-button shape="round" size="full" (click)="submitOTP()">Sumbit OTP</ion-button>
+                </ng-template>
+
+            <!--          Form Part 2 SUBMIT OPT             -->  
+            <!--          Form Part 3 User Password Form    -->
+
+                
+            <ng-template swiperSlide>
+              <form [formGroup]="userPasswordForm" >
+              <ion-item fill="clear">
+                <ion-label position="floating" >Employee ID</ion-label>
+                <ion-input type="text"  readonly value="{{newuser.emp_id}}"
+                 formControlName="new_user_emp_id" >
+
+                </ion-input>
+   
+              </ion-item>
+              <ion-item fill="clear">
+                <ion-label position="floating" >Password</ion-label>
+                <ion-input type="password" formControlName="new_user_password" >
+
+                </ion-input>
+   
+              </ion-item>
+                            
+              
+            </form>
+          
+    
+               
+    
+                  <ion-button shape="round" size="full" [disabled]="userPasswordForm.invalid"
+                   (click)="createUser()" >Next
+                  </ion-button>
+                  
+                </ng-template>
+
+                <!--          Form Part 3 User Password Form    -->
+
+            
+          <!--          Form Part 4 User Details Form 1            -->
+
+          <ng-template swiperSlide>
+            <form [formGroup]="userDetailsForm" >
+            <ion-item fill="clear">
+              <ion-label position="floating" >First Name</ion-label>
+              <ion-input type="text" formControlName="first_name" ></ion-input>
+ 
+            </ion-item>
+            <ion-item fill="clear">
+              <ion-label position="floating" >Last Name</ion-label>
+              <ion-input type="text" formControlName="last_name" ></ion-input>
+ 
+            </ion-item>
+            <ion-item fill="clear">
+              <ion-label position="floating" >Age</ion-label>
+              <ion-input type="number" formControlName="age" ></ion-input>
+ 
+            </ion-item>
+            <ion-item fill="clear">
+              <ion-label position="floating" >Designation</ion-label>
+              <ion-input type="text" formControlName="designation" ></ion-input>
+ 
+            </ion-item>
+            
+          </form>
+        
+  
+             
+  
+                <ion-button shape="round" size="full" (click)="nextForm()" >Next</ion-button>
+              </ng-template>
+
+          <!--          Form Part 4 User Details Form 1             -->  
+                 <!--          Form Part 5 User Details Form 1  Profile Picture           -->
+
+                 <ng-template swiperSlide>
+                  <form  >
+                  <ion-item fill="clear">
+                    <ion-label position="floating" >Display Image :</ion-label>
+                    <ion-input type="file"  ></ion-input>
+       
+                  </ion-item>
+                                
+                  
+                </form>
+              
+        
+                   
+        
+                      <ion-button shape="round" size="full" (click)="skipImageForm()" >Sign Up
+                      </ion-button>
+                      <ion-note slot="helper" id="newEmpIDhelper" (click)="skipImageForm()">
+                        Skip ></ion-note>
+                    </ng-template>
+      
+                <!--          Form Part 5 User Details Form 1  Profile Picture            -->  
+      
+
+            </swiper> 
+          </ion-card-content>
+        
+      </ion-card>
+
+
+    </div>
+  </ion-content>
+
+</div>
+
+

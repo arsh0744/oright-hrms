@@ -1,0 +1,28 @@
+button .time-body{
+
+    transform: scale(2);
+    
+
+}
+ion-datetime{
+
+    #shadow-root{
+
+        .datetime-time{
+            transform: translateX(30px) scale(2);
+  
+  }
+
+    }
+       
+    
+
+}
+ion-label{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    justify-content: center;
+    text-align: center;
+}

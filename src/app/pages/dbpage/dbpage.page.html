@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Registered Users</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ul>
+    <li>
+      Employee ID
+    </li>
+    
+    <li *ngFor="let user of usersData">
+      {{user.emp_id}}
+    </li>
+
+  </ul>
+
+</ion-content>

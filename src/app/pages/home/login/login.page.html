@@ -1,0 +1,50 @@
+
+<div class="container" id="offsetarea">
+
+
+</div>
+
+<div class="container" id="contentarea">
+ 
+  <ion-content [fullscreen]="true">
+    <div class="example-content">
+
+        <ion-card class="ion-text-center">
+          
+          <ion-card-header [translucent]="true">
+             <ion-card-title size="large" >Login</ion-card-title>
+          </ion-card-header>
+          <ion-card-content class="ion-text-center">
+            <form [formGroup]="loginForm">
+            <ion-item fill="clear">
+              <ion-label position="floating">Employee ID</ion-label>
+              <ion-input type="text" formControlName="loginID" ></ion-input>
+
+            <!--  <ion-note slot="error">Invalid email</ion-note>  -->
+
+            </ion-item>
+            <ion-item fill="clear">
+              <ion-label position="floating">Password</ion-label>
+              <ion-input type="password" formControlName="loginPass"></ion-input>
+             </ion-item>  
+            </form>
+
+              <ion-note slot="helper" id="passwordhelper">
+                Forgot Password ?</ion-note>
+
+                <ion-button shape="round" size="full" (click)="loginAttempt()">Login</ion-button>
+        
+            </ion-card-content>
+
+        </ion-card>
+
+
+    </div>
+    <ion-button  expand="block" fill="solid" shape="round" routerLink="/dbpage"> 
+      Go to SampleDB
+    </ion-button>
+  </ion-content>
+
+</div>
+
+
